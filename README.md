@@ -20,3 +20,5 @@ RUN `docker-compose run app sh -c "python manage.py startapp core"`
 RUN `docker-compose run app sh -c "python manage.py makemigrations core"`
 
 RUN `docker-compose run app sh -c "python manage.py migrate"`
+
+RUN `docker-compose up`
