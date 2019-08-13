@@ -5,6 +5,12 @@
 --
 Recipe App api
 
+## commands
+
 RUN `docker build .`
+
 RUN `docker-compose build`
+
 RUN `docker-compose run app sh -c "django-admin.py startproject app"`
+
+RUN `docker-compose run app sh -c "python manage.py test"`
