@@ -14,3 +14,9 @@ RUN `docker-compose build`
 RUN `docker-compose run app sh -c "django-admin.py startproject app"`
 
 RUN `docker-compose run app sh -c "python manage.py test"`
+
+RUN `docker-compose run app sh -c "python manage.py startapp core"`
+
+RUN `docker-compose run app sh -c "python manage.py makemigrations core"`
+
+RUN `docker-compose run app sh -c "python manage.py migrate"`
