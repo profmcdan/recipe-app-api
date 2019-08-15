@@ -29,8 +29,9 @@ class PublicTagApiTests(TestCase):
 class PrivateTagApiTests(TestCase):
     """Test the authorized tag api (public)"""
 
-    def setup(self):
-        self.user = get_user_model().objects.create_user('test@test.com', 'testpass')
+    def setUp(self):
+        self.user = get_user_model().objects.create_user('test@test.com',
+                                                         'testpass')
         self.client = APIClient()
         self.client.force_authenticate(self.user)
 
