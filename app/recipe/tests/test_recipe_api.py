@@ -174,7 +174,6 @@ class PrivateRecipeApiTests(TestCase):
         """Test updating a recipe with put"""
         recipe = sample_recipe(user=self.user)
         recipe.tags.add(sample_tag(user=self.user))
-        new_tag = sample_tag(user=self.user, name='Currie')
         payload = {
             'title': 'Chicken',
             'time_minutes': 25,
