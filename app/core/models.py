@@ -48,10 +48,25 @@ class Tag(models.Model):
 
 
 class Ingredient(models.Model):
-    """Tag to be used for a recipe"""
+    """Ingredient to be used for recipe"""
     name = models.CharField(max_length=255)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
+
+
+class Recipe(models.Model):
+    """Recipe Model"""
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    price = models.DecimalField(decimal_places=2, max_digits=6)
+    time_minutes = models.IntegerField()
+    link = models.CharField(max_length=244, blank=True)
+    ingredients = models.ManyToManyField(Ingredient)
+    tags = models.ManyToManyField(Tag)
+
+    def __str__(self):
+        return self.title
