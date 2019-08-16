@@ -177,7 +177,6 @@ class PrivateRecipeApiTests(TestCase):
         new_tag = sample_tag(user=self.user, name='Currie')
         payload = {
             'title': 'Chicken',
-            'tags': [new_tag.id],
             'time_minutes': 25,
             'price': 5.00
         }
